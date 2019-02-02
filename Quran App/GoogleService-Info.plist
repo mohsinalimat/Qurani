@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>795751711636-v11v5pb3jtbhbg5jc75fq3otushtv3ls.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.795751711636-v11v5pb3jtbhbg5jc75fq3otushtv3ls</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAysGYhliSarJFmufNl9HeTIGEawyrxX3o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>795751711636</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>me.sketch.Quran</string>
+	<key>PROJECT_ID</key>
+	<string>quran-mahfooth</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quran-mahfooth.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:795751711636:ios:f5c8832ddccc9391</string>
+	<key>DATABASE_URL</key>
+	<string>https://quran-mahfooth.firebaseio.com</string>
+</dict>
+</plist>

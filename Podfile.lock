@@ -1,0 +1,76 @@
+PODS:
+  - Alamofire (4.5.1)
+  - BEMCheckBox (1.4.1)
+  - Bohr (3.0.0)
+  - CFAlertViewController (3.0)
+  - DOFavoriteButton (0.0.4)
+  - DynamicButton (5.0.0)
+  - DynamicColor (3.2.1)
+  - DZNEmptyDataSet (1.8.1)
+  - GDLoadingIndicator (1.0.0)
+  - Hero (0.3.6)
+  - LNPopupController (2.5.24.1)
+  - LUNTabBarController (1.0.3)
+  - pop (1.0.10)
+  - TOScrollBar (0.0.4)
+  - Whisper (5.0.0)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire
+  - BEMCheckBox
+  - Bohr
+  - CFAlertViewController
+  - DOFavoriteButton
+  - DynamicButton
+  - DynamicColor (~> 3.2.1)
+  - DZNEmptyDataSet
+  - GDLoadingIndicator (~> 1.0.0)
+  - Hero
+  - LNPopupController
+  - LUNTabBarController
+  - pop
+  - TOScrollBar
+  - Whisper
+  - YYText
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BEMCheckBox
+    - Bohr
+    - CFAlertViewController
+    - DOFavoriteButton
+    - DynamicButton
+    - DynamicColor
+    - DZNEmptyDataSet
+    - GDLoadingIndicator
+    - Hero
+    - LNPopupController
+    - LUNTabBarController
+    - pop
+    - TOScrollBar
+    - Whisper
+    - YYText
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
+  CFAlertViewController: 460bb12b42b500bb0838e5595ca144a18344765f
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+  DynamicButton: 4c2fef968e4aa0a8a6ed7ca6b8a58c8e21a36cdc
+  DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  GDLoadingIndicator: 78753d554a92203d648f567c7660e3b637ca083f
+  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
+  LNPopupController: 980f25486e8a49d4d5fb9b0ddf517d13f42b0492
+  LUNTabBarController: 82438892aff4757a09e3f478ff4e07365de84cce
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  TOScrollBar: d1f0cb32f6ddc4d561f5b02f368d0ef437be2d82
+  Whisper: 051f25e704bf8992641ffd28b20d5682ddc5f5d3
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 4dcbbab2e86d7f7e49053e247bd73add8c59822d
+
+COCOAPODS: 1.6.0.beta.1

@@ -1,0 +1,6 @@
+framework module LUNTabBarController {
+  umbrella header "LUNTabBarController-umbrella.h"
+
+  export *
+  module * { export * }
+}

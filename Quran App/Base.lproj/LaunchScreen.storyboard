@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-hr-hy5">
+                                <rect key="frame" x="46" y="297" width="283" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قرآني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-Hs-5qA">
+                                        <rect key="frame" x="15" y="15" width="253" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8m8-Hs-5qA" firstAttribute="top" secondItem="Qr5-hr-hy5" secondAttribute="top" constant="15" id="3G4-Kx-Zvv"/>
+                                    <constraint firstAttribute="trailing" secondItem="8m8-Hs-5qA" secondAttribute="trailing" constant="15" id="4um-hr-vRp"/>
+                                    <constraint firstItem="8m8-Hs-5qA" firstAttribute="centerY" secondItem="Qr5-hr-hy5" secondAttribute="centerY" id="Vmi-HS-zko"/>
+                                    <constraint firstItem="8m8-Hs-5qA" firstAttribute="centerX" secondItem="Qr5-hr-hy5" secondAttribute="centerX" id="il8-XI-410"/>
+                                    <constraint firstAttribute="width" secondItem="Qr5-hr-hy5" secondAttribute="height" multiplier="282:73" id="pvm-E5-dVl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qr5-hr-hy5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jSQ-My-Ejf"/>
+                            <constraint firstItem="Qr5-hr-hy5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="30" id="r6e-J9-yrr"/>
+                            <constraint firstItem="Qr5-hr-hy5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="s2Z-th-Ubi"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="373.76311844077964"/>
+        </scene>
+    </scenes>
+</document>

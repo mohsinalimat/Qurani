@@ -1,0 +1,6 @@
+framework module GDLoadingIndicator {
+  umbrella header "GDLoadingIndicator-umbrella.h"
+
+  export *
+  module * { export * }
+}

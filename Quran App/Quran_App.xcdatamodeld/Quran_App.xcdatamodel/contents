@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="SQFavoriteRange" representedClassName=".SQFavoriteRange" syncable="YES">
+        <attribute name="endIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="startIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="surahInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SQSurahInfo" inverseName="favoritedRanges" inverseEntity="SQSurahInfo" syncable="YES"/>
+    </entity>
+    <entity name="SQSurahInfo" representedClassName=".SQSurahInfo" syncable="YES">
+        <attribute name="completedAyahs" optional="YES" attributeType="Transformable" valueTransformerName="SQArrayTransformer" syncable="YES"/>
+        <attribute name="surahIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="surahName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favoritedRanges" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SQFavoriteRange" inverseName="surahInfo" inverseEntity="SQFavoriteRange" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SQSurahInfo" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="SQFavoriteRange" positionX="-63" positionY="27" width="128" height="90"/>
+    </elements>
+</model>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQRegularHeaderView" customModule="Quran_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-Jg-bru">
+                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="110"/>
+                    <connections>
+                        <action selector="buttonTap" destination="iN0-l3-epB" eventType="touchUpInside" id="1Lh-PY-OOW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-ka-pS8">
+                    <rect key="frame" x="15" y="22" width="50" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vDP-ka-pS8" secondAttribute="height" multiplier="10:8" id="NhK-zm-7bZ"/>
+                        <constraint firstAttribute="width" constant="50" id="xUy-FP-idC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="tintColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="تم"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="-1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTap" destination="iN0-l3-epB" eventType="touchUpInside" id="sGd-pJ-03y"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="الإعدادات" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-z4-jRV">
+                    <rect key="frame" x="250" y="25" width="105" height="33.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <color key="textColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duj-hk-Yuh">
+                    <rect key="frame" x="275" y="73.5" width="80" height="3"/>
+                    <color key="backgroundColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="1I8-57-MaJ"/>
+                        <constraint firstAttribute="width" constant="80" id="qDL-Z0-bMa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nbt-Jg-bru" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="84G-HM-cOc"/>
+                <constraint firstItem="duj-hk-Yuh" firstAttribute="trailing" secondItem="MDf-z4-jRV" secondAttribute="trailing" id="9Tl-KL-GuW"/>
+                <constraint firstItem="duj-hk-Yuh" firstAttribute="top" secondItem="MDf-z4-jRV" secondAttribute="bottom" constant="15" id="Dzq-eX-7Mo"/>
+                <constraint firstItem="vDP-ka-pS8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="LGi-8A-b1h"/>
+                <constraint firstAttribute="trailing" secondItem="MDf-z4-jRV" secondAttribute="trailing" constant="20" id="N9T-XJ-FXA"/>
+                <constraint firstItem="MDf-z4-jRV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="dDR-IA-1ES"/>
+                <constraint firstItem="nbt-Jg-bru" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eKn-E7-nB3"/>
+                <constraint firstItem="vDP-ka-pS8" firstAttribute="centerY" secondItem="MDf-z4-jRV" secondAttribute="centerY" id="mKk-yh-GnI"/>
+                <constraint firstAttribute="bottom" secondItem="nbt-Jg-bru" secondAttribute="bottom" id="okP-I6-PN8"/>
+                <constraint firstItem="nbt-Jg-bru" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zUN-Xy-kSt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="doneButton" destination="vDP-ka-pS8" id="YhY-r3-xRS"/>
+                <outlet property="separatorView" destination="duj-hk-Yuh" id="yhW-Mg-vMl"/>
+                <outlet property="titleLabel" destination="MDf-z4-jRV" id="XZ8-4U-Sdk"/>
+            </connections>
+            <point key="canvasLocation" x="367.5" y="77"/>
+        </view>
+    </objects>
+</document>

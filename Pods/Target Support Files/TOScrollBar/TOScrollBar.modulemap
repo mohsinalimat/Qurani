@@ -1,0 +1,6 @@
+framework module TOScrollBar {
+  umbrella header "TOScrollBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

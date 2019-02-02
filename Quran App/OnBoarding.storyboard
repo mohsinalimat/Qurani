@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8it-bO-OCS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="U1U-Cw-boV">
+            <objects>
+                <viewController storyboardIdentifier="About" id="rCi-8s-Zet" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L0u-aR-0A6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yAN-N2-5MI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dg9-hJ-8Ec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-NR-2HX">
+                                <rect key="frame" x="122.5" y="597" width="130" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3EA-35-l5E"/>
+                                    <constraint firstAttribute="width" constant="130" id="dug-nh-S7w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="لنعرف أكثر 😍"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="wmQ-dR-7Hj" kind="show" id="Ka2-xF-1JU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tU9-Pu-WFh">
+                                <rect key="frame" x="0.0" y="217" width="0.0" height="235"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="Quran_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-ek-SZi">
+                                        <rect key="frame" x="112.5" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FcG-ek-SZi" secondAttribute="height" multiplier="1:1" id="4qp-YW-GRo"/>
+                                            <constraint firstAttribute="width" constant="150" id="hWT-tD-bDm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="القرآن المحفوظ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBW-GJ-GOf">
+                                        <rect key="frame" x="98.5" y="165" width="178.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="القرآن المحفوظ هو تطبيق لمساعدتك على حفظ القرآن الكريم" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLd-KI-LKE">
+                                        <rect key="frame" x="0.0" y="213.5" width="0.0" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tU9-Pu-WFh" firstAttribute="centerX" secondItem="Dg9-hJ-8Ec" secondAttribute="centerX" id="5w2-lP-vpl"/>
+                            <constraint firstItem="tU9-Pu-WFh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dg9-hJ-8Ec" secondAttribute="leadingMargin" constant="20" id="BMf-SO-dx8"/>
+                            <constraint firstItem="tU9-Pu-WFh" firstAttribute="centerY" secondItem="Dg9-hJ-8Ec" secondAttribute="centerY" id="NyR-Hu-Yf2"/>
+                            <constraint firstItem="yAN-N2-5MI" firstAttribute="top" secondItem="mYa-NR-2HX" secondAttribute="bottom" constant="20" id="R8f-5u-znr"/>
+                            <constraint firstItem="mYa-NR-2HX" firstAttribute="centerX" secondItem="Dg9-hJ-8Ec" secondAttribute="centerX" id="bUc-OB-7b3"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="UDL-KQ-dNM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wal-za-mRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-320.68965517241384"/>
+        </scene>
+        <!--Intro Example View Controller-->
+        <scene sceneID="K3a-b8-oRf">
+            <objects>
+                <viewController id="wmQ-dR-7Hj" customClass="SQIntroExampleViewController" customModule="Quran_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zHf-BB-xXr"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Vt-2e-g4z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sdk-B2-h2W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كيف يعمل التطبيق؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEJ-rj-wTE">
+                                <rect key="frame" x="74.5" y="45" width="226.5" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يمكنك تقسيم السورة إلى أجزاء لحفظها" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-z5-ggC">
+                                <rect key="frame" x="31" y="84" width="313" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="059-5b-sOx">
+                                <rect key="frame" x="113" y="597" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DZp-xY-YXe"/>
+                                    <constraint firstAttribute="width" constant="150" id="FV0-F7-fIj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="نبدأ ببسم الله ❤️"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="4VX-hG-mSQ" kind="presentation" modalTransitionStyle="crossDissolve" id="sHB-Yl-O5b"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7br-Xv-oPE">
+                                <rect key="frame" x="41" y="196.5" width="292" height="380.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="XW6-7h-hKf">
+                                    <size key="itemSize" width="280" height="65"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PtN-Hb-iSH" customClass="SQExampleCollectionViewCell" customModule="Quran_App" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="0.0" width="280" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الآيات من ١ إلى ٢٥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAp-M6-BE6">
+                                                    <rect key="frame" x="125" y="22" width="127" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lj7-PL-s1d" customClass="GDLoadingIndicator">
+                                                    <rect key="frame" x="19" y="23" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Lj7-PL-s1d" secondAttribute="height" multiplier="1:1" id="4Eo-eo-DWO"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="circleType">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="circleAnimationType">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillerAnimationType">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM8-wj-ddm" customClass="BEMCheckBox">
+                                                    <rect key="frame" x="19" y="23" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                            <color key="value" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                                            <color key="value" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="offFillColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                            <color key="value" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                            <color key="value" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Lj7-PL-s1d" firstAttribute="top" secondItem="PtN-Hb-iSH" secondAttribute="topMargin" constant="3" id="2lE-pe-6jJ"/>
+                                            <constraint firstItem="bM8-wj-ddm" firstAttribute="width" secondItem="Lj7-PL-s1d" secondAttribute="width" id="4fo-y4-VPu"/>
+                                            <constraint firstItem="Lj7-PL-s1d" firstAttribute="leading" secondItem="PtN-Hb-iSH" secondAttribute="leadingMargin" constant="3" id="B0g-bf-vbq"/>
+                                            <constraint firstItem="Lj7-PL-s1d" firstAttribute="centerY" secondItem="PtN-Hb-iSH" secondAttribute="centerY" id="Jbn-8n-wcs"/>
+                                            <constraint firstItem="bM8-wj-ddm" firstAttribute="centerX" secondItem="Lj7-PL-s1d" secondAttribute="centerX" id="Rsq-Xo-sTl"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="EAp-M6-BE6" secondAttribute="trailing" constant="12" id="g4e-UW-1pp"/>
+                                            <constraint firstItem="bM8-wj-ddm" firstAttribute="height" secondItem="Lj7-PL-s1d" secondAttribute="height" id="iGg-Oj-nTu"/>
+                                            <constraint firstItem="EAp-M6-BE6" firstAttribute="centerY" secondItem="PtN-Hb-iSH" secondAttribute="centerY" id="tuL-MD-cZs"/>
+                                            <constraint firstItem="bM8-wj-ddm" firstAttribute="centerY" secondItem="Lj7-PL-s1d" secondAttribute="centerY" id="zon-Cr-INF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="checkbox" destination="bM8-wj-ddm" id="jZ7-jB-4v0"/>
+                                            <outlet property="label" destination="EAp-M6-BE6" id="3Gz-I0-wti"/>
+                                            <outlet property="loadingIndicator" destination="Lj7-PL-s1d" id="Tfu-cO-9tI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="wmQ-dR-7Hj" id="k0A-dI-kJY"/>
+                                    <outlet property="delegate" destination="wmQ-dR-7Hj" id="TM1-lt-rdz"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سورة الكهف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-7l-NDv">
+                                <rect key="frame" x="117.5" y="138" width="139.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NEJ-rj-wTE" firstAttribute="top" secondItem="zHf-BB-xXr" secondAttribute="bottom" constant="25" id="10q-4Z-1cB"/>
+                            <constraint firstItem="NEJ-rj-wTE" firstAttribute="centerX" secondItem="Sdk-B2-h2W" secondAttribute="centerX" id="Ahn-Sz-Au2"/>
+                            <constraint firstItem="7br-Xv-oPE" firstAttribute="centerX" secondItem="Sdk-B2-h2W" secondAttribute="centerX" id="G8X-vC-wkP"/>
+                            <constraint firstItem="OcR-z5-ggC" firstAttribute="leading" secondItem="Sdk-B2-h2W" secondAttribute="leadingMargin" constant="15" id="GoB-7J-iaI"/>
+                            <constraint firstItem="059-5b-sOx" firstAttribute="top" secondItem="7br-Xv-oPE" secondAttribute="bottom" constant="20" id="Pg3-bh-DTd"/>
+                            <constraint firstItem="3Vt-2e-g4z" firstAttribute="top" secondItem="059-5b-sOx" secondAttribute="bottom" constant="20" id="RxS-gO-DO3"/>
+                            <constraint firstItem="BXG-7l-NDv" firstAttribute="centerX" secondItem="7br-Xv-oPE" secondAttribute="centerX" id="XWL-qz-xgc"/>
+                            <constraint firstItem="BXG-7l-NDv" firstAttribute="top" secondItem="OcR-z5-ggC" secondAttribute="bottom" constant="30" id="ZTU-nw-sod"/>
+                            <constraint firstItem="059-5b-sOx" firstAttribute="centerX" secondItem="Sdk-B2-h2W" secondAttribute="centerX" id="dIX-ZV-P2x"/>
+                            <constraint firstItem="OcR-z5-ggC" firstAttribute="centerX" secondItem="Sdk-B2-h2W" secondAttribute="centerX" id="lJH-a1-cQY"/>
+                            <constraint firstItem="7br-Xv-oPE" firstAttribute="top" secondItem="BXG-7l-NDv" secondAttribute="bottom" constant="25" id="m6b-Nm-0dl"/>
+                            <constraint firstItem="7br-Xv-oPE" firstAttribute="leading" secondItem="Sdk-B2-h2W" secondAttribute="leadingMargin" constant="25" id="qgz-c1-Zez"/>
+                            <constraint firstItem="OcR-z5-ggC" firstAttribute="top" secondItem="NEJ-rj-wTE" secondAttribute="bottom" constant="5" id="yjM-EW-375"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionView" destination="7br-Xv-oPE" id="bkl-cb-zSP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K5X-c0-6l7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8" y="-322.48875562218893"/>
+        </scene>
+        <!--MainTabBar-->
+        <scene sceneID="55H-Yw-Yp8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainTabBar" id="4VX-hG-mSQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIb-ud-Le6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2502" y="-323"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n7K-jd-xwZ">
+            <objects>
+                <navigationController storyboardIdentifier="NAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8it-bO-OCS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qGs-wz-eqz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rCi-8s-Zet" kind="relationship" relationship="rootViewController" id="JCi-CP-ACa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afu-YW-29U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103.2" y="-320.68965517241384"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Quran_logo" width="730" height="730"/>
+    </resources>
+    <color key="tintColor" red="0.20392156859999999" green="0.64313725489999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
