@@ -1,20 +1,15 @@
-# Quran-Mahfooth
+# Qurani
+Simple Application that helps you memorize quran!
 
-## Installation Guide
+## About
 
-When you first open the project, you may see building errors indicating that some mp3 files is missing, it's ok, just add the mp3 files ( or you can just delete them, but it will miss the player feature ) into the source folder.
+I believe what makes this is app special that it's minimalist design, and that is it's very easy to use, and it's made for special purpose, not mainly for reading quran, or studying tafsirs, but for memorizing quran, by repeating Ayat for selected ranges over and over again.
 
-Ayat MP3 files are provided by : http://www.everyayah.com/data/status.php.
+## How this thing work?
 
-# About
+I really made the application long time ago, and didn't have the chance to publish it to the AppStore until now, but I hope I'll go back to discover how it's made, and I really appreciate any help constributing to this project.
 
-Quran Mahfooth helps you memorize quran by splitting surahs into small pieces called "Favorite Range", each favorite range holds a range of ayahs in some surah.
+## Future ToDO's
 
-# Notes
-
-ToDO's:
-
-* Adding the ability to choose the shaikh.
-* 3D touch support, and tvOS support.
-* The ability to download surahs ayat seperatly.
-* Free :D
+- Depending on Pages like the regular Quran, that's a more friendly UI.
+- Adding Qari's, and that's cause the networking part made to make this feature a lot easier to implement
