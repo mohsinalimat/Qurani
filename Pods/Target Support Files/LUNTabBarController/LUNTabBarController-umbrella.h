@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "LUNTabBarAnimationController+Private.h"
 #import "LUNTabBarAnimationController.h"
 #import "LUNTabBarController.h"
 #import "LUNTabBarFloatingControllerAnimatedTransitioning.h"

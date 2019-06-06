@@ -23,7 +23,7 @@ class SQSettingsViewController: BOTableViewController {
         // Do any additional setup after loading the view.
         tableView.backgroundColor = .white
         tableView.separatorColor = Colors.semiWhite
-        tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,7 +104,7 @@ class SQSettingOptionsTableViewController: BOTableViewController {
 
         tableView.backgroundColor = .white
         tableView.separatorColor = Colors.semiWhite
-        tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         addHeaderView()
     }

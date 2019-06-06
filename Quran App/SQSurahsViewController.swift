@@ -35,7 +35,7 @@ class SQSurahsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.bringSubview(toFront: plusButton)
+        view.bringSubviewToFront(plusButton)
         
         isHeroEnabled = true
         collectionView.heroModifiers = [.cascade]
@@ -186,7 +186,7 @@ extension SQSurahsViewController: UICollectionViewDataSource, UICollectionViewDe
         reload()
     }
     
-    dynamic func longPress(sender: UILongPressGestureRecognizer){
+    @objc dynamic func longPress(sender: UILongPressGestureRecognizer){
         if sender.state != .ended { return }
         let point = sender.location(in: collectionView)
         if let indexPath = collectionView.indexPathForItem(at: point) {
@@ -246,13 +246,13 @@ extension SQSurahsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let fontSize: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 28 : 40
         
-        return NSAttributedString.init(string: EmptyState.favoritesTitle, attributes: [NSForegroundColorAttributeName: Colors.title, NSFontAttributeName: UIFont.boldSystemFont(ofSize: fontSize)])
+        return NSAttributedString.init(string: EmptyState.favoritesTitle, attributes: [NSAttributedString.Key.foregroundColor: Colors.title, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: fontSize)])
     }
     
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let fontSize: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 18 : 28
         
-        return NSAttributedString.init(string: EmptyState.favoritesDetails, attributes: [NSForegroundColorAttributeName: Colors.lightGray, NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)])
+        return NSAttributedString.init(string: EmptyState.favoritesDetails, attributes: [NSAttributedString.Key.foregroundColor: Colors.lightGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)])
     }
     
     func offset(forEmptyDataSet scrollView: UIScrollView!) -> CGPoint {

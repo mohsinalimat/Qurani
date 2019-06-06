@@ -60,7 +60,7 @@ import pop
             animation.property = property as? POPAnimatableProperty
             animation.fromValue = NSNumber(value: Float(self.animationValue) as Float)
             animation.toValue = NSNumber(value: Float(toValue) as Float)
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
             animation.duration = 0.25
             pop_add(animation, forKey: "percentage")
         } else {
@@ -157,7 +157,7 @@ enum SQPlayButtonState: Int {
         corePlayButton.center = CGPoint(x: buttonState == .playing ?  bounds.width / 2 : bounds.width / 2 + (bounds.width / 20), y: bounds.height / 2)
     }
     
-    func playButtonPressed() {
+    @objc func playButtonPressed() {
         setButtonState(buttonState.reversed, animated: true, shouldSendActions: true)
     }
     

@@ -78,7 +78,7 @@ class SQAyatViewController: UIViewController {
             fatalError("INITIALIZING AYAT VIEW CONTROLLER WITHOUT SPECIFIYING A FAVORRITE RANGE!!")
         }
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100        
         
         titleLabel.textColor = Colors.title
@@ -171,7 +171,7 @@ extension SQAyatViewController: UITableViewDataSource, UITableViewDelegate {
         paragraphStyle.lineHeightMultiple = 1.0
         paragraphStyle.alignment = .right
         
-        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: labelColor, NSFontAttributeName: font])
+        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: labelColor, NSAttributedString.Key.font: font])
         
         cell.label.attributedText = attributedText
         cell.cornerLabel.text = "\(ayaRep.index!.localized)"
@@ -306,7 +306,7 @@ extension SQAyatViewController {
         }
     }
     
-    func updateButtonStatus(){
+    @objc func updateButtonStatus(){
         let paused = self.soundManager.paused
         let playButtonStatePaused = self.playButton.buttonState == .paused
         
@@ -323,7 +323,7 @@ extension SQAyatViewController {
 
 //MARK: Actions and Methods
 extension SQAyatViewController {
-    func didChangeCurrentSoundItem(_ notification: Notification){
+    @objc func didChangeCurrentSoundItem(_ notification: Notification){
         let currentItem = notification.userInfo?[Keys.soundItem] as? SQSoundItem
         self.updateViewsWithSoundItem(currentItem)
     }

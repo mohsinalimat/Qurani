@@ -128,13 +128,13 @@ class SQAyahPlayerViewController: UIViewController {
 extension SQAyahPlayerViewController {
     
     /* recieved when changing the current sound item, mmmm just update the views. */
-    func didChangeCurrentItem(_ notification: Notification){
+    @objc func didChangeCurrentItem(_ notification: Notification){
         let soundItem = notification.userInfo?[Keys.soundItem] as? SQSoundItem
         updateAllViews(soundItem)
     }
 
     //MARK: Updating..
-    func updatePlayingStatus(){
+    @objc func updatePlayingStatus(){
         /* update the play button .. */
         self.playButton.setImage(UIImage(named: soundManager.paused ? Icons.play.fileName : Icons.pause.fileName), for: .normal)
     }
@@ -176,7 +176,7 @@ extension SQAyahPlayerViewController {
         }
         
         self.repeatButton.tintColor = self.soundManager.autorepeat == true ? Colors.tint : Colors.lightGray
-        rateButton.setImage(_imageForRateValue(soundManager.rateValue), for: UIControlState())
+        rateButton.setImage(_imageForRateValue(soundManager.rateValue), for: UIControl.State())
         
         completeButton.isSelected = favoriteRange.ayahIsCompleted(item.ayah)
         
@@ -238,7 +238,7 @@ extension SQAyahPlayerViewController {
     
     @IBAction func toggleRate(){
         soundManager.nextRate()
-        self.rateButton.setImage(_imageForRateValue(soundManager.rateValue), for: UIControlState())
+        self.rateButton.setImage(_imageForRateValue(soundManager.rateValue), for: UIControl.State())
     }
     
     func tapAnimation(toView: UIView){
@@ -309,7 +309,7 @@ extension SQAyahPlayerViewController {
             tooltip?.dismiss(animated: true)
         }
         
-        tooltip = SexyTooltip(attributedString: NSAttributedString(string: message, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 17), NSForegroundColorAttributeName: UIColor.white]))
+        tooltip = SexyTooltip(attributedString: NSAttributedString(string: message, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white]))
         tooltip?.hasShadow = true
         tooltip?.dismiss(inTimeInterval: 5, animated: true)
         tooltip?.contentView.backgroundColor = Colors.tint

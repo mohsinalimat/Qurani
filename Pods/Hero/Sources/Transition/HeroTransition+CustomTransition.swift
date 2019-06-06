@@ -22,20 +22,19 @@
 
 import UIKit
 
-public class HeroIndependentController: HeroBaseController {
-  public override init() {
-    super.init()
-  }
-
-  public func transition(rootView: UIView, fromViews: [UIView], toViews: [UIView], completion: ((Bool) -> Void)? = nil) {
-    transitionContainer = rootView
-    completionCallback = completion
-
-    prepareForTransition()
-    context.defaultCoordinateSpace = .sameParent
-    context.set(fromViews: fromViews, toViews: toViews)
-    processContext()
-    prepareForAnimation()
-    animate()
+// custom transition helper, used in hero_replaceViewController
+public extension HeroTransition {
+  public func transition(from: UIViewController, to: UIViewController, in view: UIView, completion: ((Bool) -> Void)? = nil) {
+    guard !isTransitioning else { return }
+    self.state = .notified
+    isPresenting = true
+    transitionContainer = view
+    fromViewController = from
+    toViewController = to
+    completionCallback = {
+      completion?($0)
+      self.state = .possible
+    }
+    start()
   }
 }

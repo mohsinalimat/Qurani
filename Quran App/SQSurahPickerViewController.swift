@@ -50,7 +50,7 @@ class SQSurahPickerViewController: SQPickerViewController {
             self.tableView.reloadData()
         }
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 120
         
         downloadManager.delegate = self

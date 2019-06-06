@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-
-
 enum FontSizeType: Int {
     case bigger = 0,
     regular = 1,
@@ -79,7 +76,7 @@ extension SettingsKeys {
 
 class SQSettingsController: NSObject {
     class func fontSize() -> CGFloat {
-        let fontTypeRaw = (UserDefaults.standard.object(forKey: SettingsKeys.FontSize) as! NSNumber).intValue
+        let fontTypeRaw = UserDefaults.standard.integer(forKey: SettingsKeys.FontSize)
         let fontType = FontSizeType(rawValue: fontTypeRaw)!
 
         return UIDevice.current.userInterfaceIdiom == .phone ? fontType.fontSize_phone() : fontType.fontSize_pad()
@@ -87,10 +84,10 @@ class SQSettingsController: NSObject {
     
     
     class func shouldAutoComplete() -> Bool {
-        return (UserDefaults.standard.object(forKey: SettingsKeys.AutoComplete) as! NSNumber).boolValue
+        return UserDefaults.standard.bool(forKey: SettingsKeys.AutoComplete)
     }
     
     class func shouldRepeatQueueOnFinish() -> Bool {
-        return (UserDefaults.standard.object(forKey: SettingsKeys.RepeatOnFinish) as! NSNumber).boolValue
+        return UserDefaults.standard.bool(forKey: SettingsKeys.RepeatOnFinish)
     }
 }

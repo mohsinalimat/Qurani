@@ -240,7 +240,7 @@ extension SQFavoritedRangesViewController: UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionElementKindSectionHeader else {
+        guard kind == UICollectionView.elementKindSectionHeader else {
             return UICollectionReusableView()
         }
         

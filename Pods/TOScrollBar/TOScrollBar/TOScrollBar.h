@@ -1,7 +1,7 @@
 //
 //  TOScrollBar.h
 //
-//  Copyright 2016 Timothy Oliver. All rights reserved.
+//  Copyright 2016-2017 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -68,6 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** The scroll view in which this scroll bar has been added. */
 @property (nonatomic, weak, readonly) UIScrollView *scrollView;
+
+/** When enabled, the scroll bar will only respond to direct touches to the handle control.
+ Touches to the track will be passed to the UI controls beneath it.
+ Default is NO. */
+@property (nonatomic, assign) BOOL handleExclusiveInteractionEnabled;
 
 /** 
  Creates a new instance of the scroll bar view 
