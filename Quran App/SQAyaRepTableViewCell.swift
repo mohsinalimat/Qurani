@@ -18,21 +18,28 @@ class SQAyaRepTableViewCell: UITableViewCell {
 
     var onButtonTap: ((_ selected: Bool) -> Void)?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    var textFont: UIFont!
     
     @IBAction func buttonTap(_ sender: AnyObject) {
         button.isSelected ? button.deselect() : button.select()
         onButtonTap?(button.isSelected)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.textFont = label.font
+    }
+    
+    func set(text: String, color: UIColor){
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 0
+        paragraphStyle.lineHeightMultiple = 1.0
+        paragraphStyle.alignment = .right
+        
+        let attributedText = NSAttributedString(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: textFont])
+        
+        label.attributedText = attributedText
     }
 }
 

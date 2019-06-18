@@ -8,7 +8,10 @@
 
 import Foundation
 
-let SQSourceBaseURL = URL(string: "http://everyayah.com/data/Ibrahim_Akhdar_32kbps/")!
+private let alAfasyURL = URL(string: "http://www.everyayah.com/data/Alafasy_128kbps/")!
+private let alDussary = URL(string: "http://www.everyayah.com/data/Yasser_Ad-Dussary_128kbps/")!
+
+let SQSourceBaseURL = alDussary
 let SQDestinationBaseURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
 let SQMP3Extension = "mp3"

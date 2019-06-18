@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-let kAvailableIndexes: [Int] = [1,18,20,28,31,36,55,56,67,78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]
+let kAvailableIndexes: [Int] = []
 
 class SQQuranStateManager: NSObject {
     
@@ -64,7 +64,7 @@ class SQQuranStateManager: NSObject {
             
             // customize it..
             newSurahInfo.surahName = surah.name
-            newSurahInfo.surahIndex = surah.index as NSNumber!
+            newSurahInfo.surahIndex = surah.index as NSNumber
             
             
             // add it..

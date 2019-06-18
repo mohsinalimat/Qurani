@@ -41,7 +41,7 @@ class SQRegularHeaderView: UIView {
         let constraints = [NSLayoutConstraint.init(item: doneButton, attribute: .width, relatedBy: .equal, toItem: doneButton, attribute: .height, multiplier: 19 / 33, constant: 0.0), NSLayoutConstraint.init(item: doneButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 15)]
         NSLayoutConstraint.activate(constraints)
         
-        doneButton.setImage(UIImage(named: "left"), for: UIControlState())
+        doneButton.setImage(UIImage(named: "left"), for: UIControl.State())
         doneButton.borderWidth = 0
     }
     

@@ -33,6 +33,8 @@
 	<array>
 		<string>me_quran.ttf</string>
 		<string>Air Strip Arabic.ttf</string>
+		<string>UthmanicHafs1 Ver12.otf</string>
+		<string>UthmanicHafs1B Ver12.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

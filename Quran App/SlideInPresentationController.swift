@@ -45,7 +45,7 @@ class SlideInPresentationController: UIPresentationController {
         dimmingView.addGestureRecognizer(recognizer)
     }
     
-    dynamic func handleTap(sender: UITapGestureRecognizer){
+    @objc dynamic func handleTap(sender: UITapGestureRecognizer){
         presentingViewController.dismiss(animated: true, completion: nil)
     }
     

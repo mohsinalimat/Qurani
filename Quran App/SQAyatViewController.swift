@@ -44,11 +44,9 @@ class SQAyatViewController: UIViewController {
         return favoriteRange.ayat
     }
     
-    var font: UIFont! {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    lazy var font: UIFont = {
+        return UIFont(name: "KFGQPC HAFS Uthmanic Script", size: SQSettingsController.fontSize())!
+    }()
     
     var favoriteRange: SQFavoriteRange! {
         didSet {
@@ -71,14 +69,14 @@ class SQAyatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.playButton.heroID = "button"
+        self.playButton.hero.id = "button"
         
         
         if favoriteRange == nil {
             fatalError("INITIALIZING AYAT VIEW CONTROLLER WITHOUT SPECIFIYING A FAVORRITE RANGE!!")
         }
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100        
         
         titleLabel.textColor = Colors.title
@@ -87,7 +85,7 @@ class SQAyatViewController: UIViewController {
         backButton.tintColor = Colors.tint
         tableView.separatorColor = Colors.semiWhite
         
-        navigationController?.heroNavigationAnimationType = .slide(direction: .right)
+        navigationController?.hero.navigationAnimationType = .slide(direction: .right)
         
         
         playerViewController = SQAyahPlayerViewController.create(from: "Player", withIdentifier: "Player")
@@ -113,7 +111,8 @@ class SQAyatViewController: UIViewController {
             currentAyahIndex = -1
         }
         
-        font = UIFont(name: "me_quran", size: SQSettingsController.fontSize())
+        // repacing font
+//        font = UIFont(name: "me_quran", size: SQSettingsController.fontSize())
         
         updateViewsWithSoundItem(soundManager.currentItem)
         playButton.setButtonState(soundManager.paused ? .paused : .playing, animated: false, shouldSendActions: false)
@@ -166,14 +165,16 @@ extension SQAyatViewController: UITableViewDataSource, UITableViewDelegate {
         let labelColor = shouldHighlight ? Colors.tint : Colors.contents
         let backgroundColor = shouldHighlight ? Colors.tint.withAlphaComponent(0.2) : UIColor.white
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 0
-        paragraphStyle.lineHeightMultiple = 1.0
-        paragraphStyle.alignment = .right
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 0
+//        paragraphStyle.lineHeightMultiple = 1.0
+//        paragraphStyle.alignment = .right
+//
+//        let attributedText = NSAttributedString(string: ayaRep.text + " \(indexPath.row.localized)", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: labelColor, NSAttributedString.Key.font: font])
         
-        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: labelColor, NSFontAttributeName: font])
+        cell.set(text: ayaRep.text + " \(indexPath.row.localized)", color: labelColor)
         
-        cell.label.attributedText = attributedText
+//        cell.label.attributedText = attributedText
         cell.cornerLabel.text = "\(ayaRep.index!.localized)"
         cell.backgroundColor = backgroundColor
         
@@ -241,9 +242,9 @@ extension SQAyatViewController {
             detailsLabel.text = favoriteRange.description
             self.checkmarkButton.isSelected = favoriteRange.progress == 1
             
-            self.titleLabel.heroID = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName! :  favoriteRange.description ) + "Title"
-            self.detailsLabel.heroID = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName! : favoriteRange.description ) + "Details"
-            self.view.heroID = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName : favoriteRange.description ) + "Cell"
+            self.titleLabel.hero.id = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName! :  favoriteRange.description ) + "Title"
+            self.detailsLabel.hero.id = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName! : favoriteRange.description ) + "Details"
+            self.view.hero.id = ( shouldUseSurahInfoAsHeroIDs ? favoriteRange.surahInfo.surahName : favoriteRange.description ) + "Cell"
         }
     }
 
@@ -306,7 +307,7 @@ extension SQAyatViewController {
         }
     }
     
-    func updateButtonStatus(){
+    @objc func updateButtonStatus(){
         let paused = self.soundManager.paused
         let playButtonStatePaused = self.playButton.buttonState == .paused
         
@@ -316,14 +317,14 @@ extension SQAyatViewController {
     }
     
     @IBAction func back(){
-        navigationController?.heroNavigationAnimationType = .slide(direction: .left)
+        navigationController?.hero.navigationAnimationType = .slide(direction: .left)
         navigationController?.popViewController(animated: true)
     }
 }
 
 //MARK: Actions and Methods
 extension SQAyatViewController {
-    func didChangeCurrentSoundItem(_ notification: Notification){
+    @objc func didChangeCurrentSoundItem(_ notification: Notification){
         let currentItem = notification.userInfo?[Keys.soundItem] as? SQSoundItem
         self.updateViewsWithSoundItem(currentItem)
     }

@@ -50,7 +50,7 @@ class SQSurahPickerViewController: SQPickerViewController {
             self.tableView.reloadData()
         }
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 120
         
         downloadManager.delegate = self
@@ -196,7 +196,7 @@ extension SQSurahPickerViewController {
     }
     
     func unexpand(surahAt indexPath: IndexPath){
-        if let index = expandedSurahsIDs.index(of: self.surahs[indexPath.row].id){
+        if let index = expandedSurahsIDs.firstIndex(of: self.surahs[indexPath.row].id){
             self.expandedSurahsIDs.remove(at: index)
             self.tableView.reloadRows(at: [indexPath], with: .fade)
         }
@@ -243,11 +243,11 @@ extension SQSurahPickerViewController: SQDownloadManagerDelegate {
         for item in items {
             let surah = self.surahs[item.index - 1]
             
-            if let downloadingSurahIDIndex = downloadingSurahsIDs.index(of: surah.id) {
+            if let downloadingSurahIDIndex = downloadingSurahsIDs.firstIndex(of: surah.id) {
                 self.downloadingSurahsIDs.remove(at: downloadingSurahIDIndex)
             }
             
-            if let expandedSurahIDIndex = expandedSurahsIDs.index(of: surah.id) {
+            if let expandedSurahIDIndex = expandedSurahsIDs.firstIndex(of: surah.id) {
                 self.expandedSurahsIDs.remove(at: expandedSurahIDIndex)
             }
             
@@ -280,11 +280,11 @@ extension SQSurahPickerViewController: SQDownloadManagerDelegate {
     func downloadManager(dm: SQDownloadManager, didFinishDownloading download: SQDownloadManager.Download) {
         let surah = self.surahs[download.index - 1]
         
-        if let downloadingSurahIDIndex = downloadingSurahsIDs.index(of: surah.id) {
+        if let downloadingSurahIDIndex = downloadingSurahsIDs.firstIndex(of: surah.id) {
             self.downloadingSurahsIDs.remove(at: downloadingSurahIDIndex)
         }
         
-        if let expandedSurahIDIndex = expandedSurahsIDs.index(of: surah.id) {
+        if let expandedSurahIDIndex = expandedSurahsIDs.firstIndex(of: surah.id) {
             self.expandedSurahsIDs.remove(at: expandedSurahIDIndex)
         }
         

@@ -36,7 +36,7 @@ public extension UIColor {
     - parameter   hexString:
     - returns: color with the given hex string
   */
-  public convenience init?(hexString: String) {
+    convenience init?(hexString: String) {
     self.init(hexString: hexString, alpha: 1.0)
   }
 
@@ -47,28 +47,28 @@ public extension UIColor {
     - parameter   alpha:
     - returns: color with the given hex string and alpha
   */
-  public convenience init?(hexString: String, alpha: Float) {
+    convenience init?(hexString: String, alpha: Float) {
     var hex = hexString
 
     // Check for hash and remove the hash
     if hex.hasPrefix("#") {
-      hex = hex.substring(from: hex.characters.index(hex.startIndex, offsetBy: 1))
+      hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 1))
     }
     
     if (hex.range(of: "(^[0-9A-Fa-f]{6}$)|(^[0-9A-Fa-f]{3}$)", options: .regularExpression) != nil) {
     
         // Deal with 3 character Hex strings
-        if hex.characters.count == 3 {
-          let redHex   = hex.substring(to: hex.characters.index(hex.startIndex, offsetBy: 1))
-          let greenHex = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 1) ..< hex.characters.index(hex.startIndex, offsetBy: 2)))
-          let blueHex  = hex.substring(from: hex.characters.index(hex.startIndex, offsetBy: 2))
+        if hex.count == 3 {
+          let redHex   = hex.substring(to: hex.index(hex.startIndex, offsetBy: 1))
+          let greenHex = hex.substring(with: (hex.index(hex.startIndex, offsetBy: 1) ..< hex.index(hex.startIndex, offsetBy: 2)))
+          let blueHex  = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
           
           hex = redHex + redHex + greenHex + greenHex + blueHex + blueHex
         }
 
-        let redHex = hex.substring(to: hex.characters.index(hex.startIndex, offsetBy: 2))
-        let greenHex = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 2) ..< hex.characters.index(hex.startIndex, offsetBy: 4)))
-        let blueHex = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 4) ..< hex.characters.index(hex.startIndex, offsetBy: 6)))
+        let redHex = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
+        let greenHex = hex.substring(with: (hex.index(hex.startIndex, offsetBy: 2) ..< hex.index(hex.startIndex, offsetBy: 4)))
+        let blueHex = hex.substring(with: (hex.index(hex.startIndex, offsetBy: 4) ..< hex.index(hex.startIndex, offsetBy: 6)))
         
         var redInt:   CUnsignedInt = 0
         var greenInt: CUnsignedInt = 0
@@ -97,7 +97,7 @@ public extension UIColor {
     - parameter   hex:
     - returns: color with the given hex value
   */
-  public convenience init?(hex: Int) {
+    convenience init?(hex: Int) {
     self.init(hex: hex, alpha: 1.0)
   }
   
@@ -108,7 +108,7 @@ public extension UIColor {
     - parameter   alpha:
     - returns: color with the given hex value and alpha
   */
-  public convenience init?(hex: Int, alpha: Float) {
+    convenience init?(hex: Int, alpha: Float) {
     let hexString = NSString(format: "%2X", hex)
     self.init(hexString: hexString as String , alpha: alpha)
   }

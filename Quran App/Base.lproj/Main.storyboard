@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KWI-Ml-QgX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KWI-Ml-QgX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UthmanicHafs1B Ver12.otf">
+            <string>KFGQPCHAFSUthmanicScript-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--About View Controller-->
         <scene sceneID="xF9-eG-fhN">
@@ -381,6 +386,7 @@
                         <segue destination="FWj-NX-JhL" kind="relationship" relationship="viewControllers" id="Lff-mQ-aOa"/>
                         <segue destination="1jC-U4-s0R" kind="relationship" relationship="viewControllers" id="MsP-yM-1Mj"/>
                         <segue destination="qLu-qO-idu" kind="relationship" relationship="viewControllers" id="FcJ-Jy-Wi4"/>
+                        <segue destination="VaT-aW-wNB" kind="relationship" relationship="viewControllers" id="NYR-9I-0ip"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUE-Nz-DX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,6 +404,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBY-0G-K19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1587" y="-644"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="cWA-d7-VQS">
+            <objects>
+                <viewController id="VaT-aW-wNB" customClass="SQAyatPageViewController" customModule="Quran_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sMh-lu-ZEm"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNJ-eu-5iB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="59C-WD-5va">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lHa-Jk-AAg">
+                                <rect key="frame" x="16" y="50" width="288" height="449"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">إِنَّ الَّذِينَ كَفَرُوا سَوَاءٌ عَلَيْهِمْ أَأَنْذَرْتَهُمْ أَمْ لَمْ تُنْذِرْهُمْ لَا يُؤْمِنُونَ ٦ خَتَمَ اللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ وَعَلَىٰ أَبْصَارِهِمْ غِشَاوَةٌ وَلَهُمْ عَذَابٌ عَظِيمٌ ٧وَمِنَ النَّاسِ مَنْ يَقُولُ آمَنَّا بِاللَّهِ وَبِالْيَوْمِ الْآخِرِ وَمَا هُمْ بِمُؤْمِنِينَ ٨يُخَادِعُونَ اللَّهَ وَالَّذِينَ آمَنُوا وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ وَمَا يَشْعُرُونَ ٩فِي قُلُوبِهِمْ مَرَضٌ فَزَادَهُمُ اللَّهُ مَرَضًا وَلَهُمْ عَذَابٌ أَلِيمٌ بِمَا كَانُوا يَكْذِبُونَ ١٠وَإِذَا قِيلَ لَهُمْ لَا تُفْسِدُوا فِي الْأَرْضِ قَالُوا إِنَّمَا نَحْنُ مُصْلِحُونَ ١١ أَلَا إِنَّهُمْ هُمُ الْمُفْسِدُونَ وَلَٰكِنْ لَا يَشْعُرُونَ ١٢ وَإِذَا قِيلَ لَهُمْ آمِنُوا كَمَا آمَنَ النَّاسُ قَالُوا أَنُؤْمِنُ كَمَا آمَنَ السُّفَهَاءُ أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ وَلَٰكِنْ لَا يَعْلَمُونَ ١٣ وَإِذَا لَقُوا الَّذِينَ آمَنُوا قَالُوا آمَنَّا وَإِذَا خَلَوْا إِلَىٰ شَيَاطِينِهِمْ قَالُوا إِنَّا مَعَكُمْ إِنَّمَا نَحْنُ مُسْتَهْزِئُونَ ١٤اللَّهُ يَسْتَهْزِئُ بِهِمْ وَيَمُدُّهُمْ فِي طُغْيَانِهِمْ يَعْمَهُونَ ١٥أُولَٰئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَىٰ فَمَا رَبِحَتْ تِجَارَتُهُمْ وَمَا كَانُوا مُهْتَدِينَ ١٦</string>
+                                <fontDescription key="fontDescription" name="KFGQPCHAFSUthmanicScript-Bold" family="KFGQPC HAFS Uthmanic Script" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blp-zX-6fF" customClass="YYTextView">
+                                <rect key="frame" x="16" y="45" width="288" height="454"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                        <mutableString key="value">إِنَّ الَّذِينَ كَفَرُوا سَوَاءٌ عَلَيْهِمْ أَأَنْذَرْتَهُمْ أَمْ لَمْ تُنْذِرْهُمْ لَا يُؤْمِنُونَ ٦ خَتَمَ اللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ وَعَلَىٰ أَبْصَارِهِمْ غِشَاوَةٌ وَلَهُمْ عَذَابٌ عَظِيمٌ ٧وَمِنَ النَّاسِ مَنْ يَقُولُ آمَنَّا بِاللَّهِ وَبِالْيَوْمِ الْآخِرِ وَمَا هُمْ بِمُؤْمِنِينَ ٨يُخَادِعُونَ اللَّهَ وَالَّذِينَ آمَنُوا وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ وَمَا يَشْعُرُونَ ٩فِي قُلُوبِهِمْ مَرَضٌ فَزَادَهُمُ اللَّهُ مَرَضًا وَلَهُمْ عَذَابٌ أَلِيمٌ بِمَا كَانُوا يَكْذِبُونَ ١٠وَإِذَا قِيلَ لَهُمْ لَا تُفْسِدُوا فِي الْأَرْضِ قَالُوا إِنَّمَا نَحْنُ مُصْلِحُونَ ١١ أَلَا إِنَّهُمْ هُمُ الْمُفْسِدُونَ وَلَٰكِنْ لَا يَشْعُرُونَ ١٢ وَإِذَا قِيلَ لَهُمْ آمِنُوا كَمَا آمَنَ النَّاسُ قَالُوا أَنُؤْمِنُ كَمَا آمَنَ السُّفَهَاءُ أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ وَلَٰكِنْ لَا يَعْلَمُونَ ١٣ وَإِذَا لَقُوا الَّذِينَ آمَنُوا قَالُوا آمَنَّا وَإِذَا خَلَوْا إِلَىٰ شَيَاطِينِهِمْ قَالُوا إِنَّا مَعَكُمْ إِنَّمَا نَحْنُ مُسْتَهْزِئُونَ ١٤اللَّهُ يَسْتَهْزِئُ بِهِمْ وَيَمُدُّهُمْ فِي طُغْيَانِهِمْ يَعْمَهُونَ ١٥أُولَٰئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَىٰ فَمَا رَبِحَتْ تِجَارَتُهُمْ وَمَا كَانُوا مُهْتَدِينَ ١٦</mutableString>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName_" value="KFGQPC HAFS Uthmanic Script"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize_">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fontIsBold_" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHa-Jk-AAg" secondAttribute="trailing" id="25J-2u-p5H"/>
+                            <constraint firstItem="blp-zX-6fF" firstAttribute="top" secondItem="sMh-lu-ZEm" secondAttribute="bottom" constant="25" id="6H3-ji-8Z3"/>
+                            <constraint firstItem="lHa-Jk-AAg" firstAttribute="leading" secondItem="59C-WD-5va" secondAttribute="leadingMargin" id="Smb-fL-cXH"/>
+                            <constraint firstItem="blp-zX-6fF" firstAttribute="leading" secondItem="59C-WD-5va" secondAttribute="leadingMargin" id="aSh-LQ-jk0"/>
+                            <constraint firstItem="MNJ-eu-5iB" firstAttribute="top" secondItem="lHa-Jk-AAg" secondAttribute="bottom" constant="20" id="bBY-CZ-NKn"/>
+                            <constraint firstItem="MNJ-eu-5iB" firstAttribute="top" secondItem="blp-zX-6fF" secondAttribute="bottom" constant="20" id="dl9-8K-N9d"/>
+                            <constraint firstItem="blp-zX-6fF" firstAttribute="trailing" secondItem="59C-WD-5va" secondAttribute="trailingMargin" id="mUB-EK-Sfg"/>
+                            <constraint firstItem="lHa-Jk-AAg" firstAttribute="top" secondItem="sMh-lu-ZEm" secondAttribute="bottom" constant="30" id="pt5-2Y-3f2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="62d-Mo-pWN"/>
+                    <connections>
+                        <outlet property="label" destination="lHa-Jk-AAg" id="w0u-RE-gvT"/>
+                        <outlet property="textView" destination="blp-zX-6fF" id="yAo-Iy-5gW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jH0-Y0-YRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331.875" y="-1085.9154929577464"/>
         </scene>
         <!--FavoritesNav-->
         <scene sceneID="qke-3Y-bh5">

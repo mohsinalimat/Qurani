@@ -149,7 +149,7 @@ class SQSoundManager: NSObject, AVAudioPlayerDelegate {
         
         self.itemsQueue = soundsItems
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             _showErrorMessage(ErrorMessages.audioOpen)
@@ -412,7 +412,7 @@ extension SQSoundManager {
     }
     
     func endInterruption(withFlags flags: Int) {
-        if AVAudioSessionInterruptionOptions(rawValue: UInt(flags)) == .shouldResume {
+        if AVAudioSession.InterruptionOptions(rawValue: UInt(flags)) == .shouldResume {
             self.resume()
         }
     }

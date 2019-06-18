@@ -83,8 +83,8 @@ extension UIView: CAAnimationDelegate {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = 0.5
         animation.toValue = NSNumber(value: reverse ? 0 : 1)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        animation.fillMode = kCAFillModeBoth
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        animation.fillMode = CAMediaTimingFillMode.both
         animation.isRemovedOnCompletion = false
         animation.delegate = self
         
@@ -106,7 +106,7 @@ extension UIView: CAAnimationDelegate {
 
 extension String {
     var length: Int {
-        return characters.count
+        return count
     }
 }
 
@@ -134,7 +134,7 @@ extension Int {
 
 public extension NSObject {
     
-    public class var className: String {
+    class var className: String {
         
         /* Swift split is INSANELY slow */
         let classString = NSStringFromClass(self) as NSString
@@ -160,7 +160,7 @@ public extension UIViewController {
         showMessage(message, color: UIColor.alizarin, action: action)
     }
     
-    public class func createFromStoryboard(_ storyboard: UIStoryboard) -> Self? {
+    class func createFromStoryboard(_ storyboard: UIStoryboard) -> Self? {
         return createFromStoryboard(self, storyboard: storyboard)
     }
     
@@ -175,15 +175,15 @@ public extension UIViewController {
     
     
     
-    @IBAction public func popNavigationController() {
+    @IBAction func popNavigationController() {
         let _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction public func dismiss(){
+    @IBAction func dismiss(){
         self.dismiss(animated: true, completion: nil)
     }
     
-    public class func createFromMainStoryboardWithIdentifier(_ identifier: String) -> Self? {
+    class func createFromMainStoryboardWithIdentifier(_ identifier: String) -> Self? {
         return createFromMainStoryboard(self, identifier: identifier)
     }
     
@@ -192,7 +192,7 @@ public extension UIViewController {
         return storyboard.instantiateViewController(withIdentifier: identifier) as? T
     }
     
-    public class func create(from storyboardName: String, withIdentifier identifier: String) -> Self? {
+    class func create(from storyboardName: String, withIdentifier identifier: String) -> Self? {
         return create(fromStoryboardWithName: storyboardName, identifier: identifier)
     }
     
@@ -200,13 +200,13 @@ public extension UIViewController {
         let objectsToShare = [text]
         
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        let excludeActivities = [UIActivityType.airDrop,
-                                 UIActivityType.print,
-                                 UIActivityType.assignToContact,
-                                 UIActivityType.saveToCameraRoll,
-                                 UIActivityType.addToReadingList,
-                                 UIActivityType.postToFlickr,
-                                 UIActivityType.postToVimeo]
+        let excludeActivities = [UIActivity.ActivityType.airDrop,
+                                 UIActivity.ActivityType.print,
+                                 UIActivity.ActivityType.assignToContact,
+                                 UIActivity.ActivityType.saveToCameraRoll,
+                                 UIActivity.ActivityType.addToReadingList,
+                                 UIActivity.ActivityType.postToFlickr,
+                                 UIActivity.ActivityType.postToVimeo]
         activityVC.excludedActivityTypes = excludeActivities
         
         activityVC.completionWithItemsHandler = {string, bool, items, error in
@@ -257,7 +257,7 @@ extension UIView {
     }
 }
 
-extension UIColor {
+public extension UIColor {
     static var globalTint: UIColor {
         return UIColor(red: 52 / 255, green: 164 / 255, blue: 170 / 255, alpha: 1.0)
     }

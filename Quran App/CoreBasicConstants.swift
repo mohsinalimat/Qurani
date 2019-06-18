@@ -9,6 +9,25 @@
 import Foundation
 
 struct SQQuranReaderConstants {
-    public static let fileName = "quran-uthmani"
+    public static let fileName = QuranTextSource.simpleEnhanced.name
     public static let surahsStoreKey = "sura"
+}
+
+enum QuranTextSource: String {
+    case simple
+    case uthmani
+    case simpleEnhanced
+    
+    private var prefix: String {
+        return "quran-"
+    }
+    
+    var name: String {
+        switch self {
+        case .simpleEnhanced:
+            return prefix + "simple-enhanced"
+        default:
+            return prefix + rawValue
+        }
+    }
 }

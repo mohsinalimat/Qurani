@@ -1,7 +1,7 @@
 //
 //  TOScrollBar.m
 //
-//  Copyright 2016 Timothy Oliver. All rights reserved.
+//  Copyright 2016-2017 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -22,6 +22,7 @@
 
 #import "TOScrollBar.h"
 #import "UIScrollView+TOScrollBar.h"
+#import "TOScrollBarGestureRecognizer.h"
 
 /** Default values for the scroll bar */
 static const CGFloat kTOScrollBarTrackWidth      = 2.0f;     // The default width of the scrollable space indicator
@@ -73,6 +74,8 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *feedbackGenerator; // Taptic feedback for iPhone 7 and above
 
+@property (nonatomic, strong) TOScrollBarGestureRecognizer *gestureRecognizer; // Our custom recognizer for handling user interactions with the scroll bar
+
 @end
 
 /************************************************************************/
@@ -120,6 +123,7 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     _minimumContentHeightScale = kTOScrollBarMinimumContentScale;
     _verticalInset = UIEdgeInsetsMake(kTOScrollBarVerticalPadding, 0.0f, kTOScrollBarVerticalPadding, 0.0f);
     _feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+    _gestureRecognizer = [[TOScrollBarGestureRecognizer alloc] initWithTarget:self action:@selector(scrollBarGestureRecognized:)];
 }
 
 - (void)setUpViews
@@ -140,6 +144,9 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
 
     // Add the initial styling
     [self configureViewsForStyle:self.style];
+    
+    // Add gesture recognizer
+    [self addGestureRecognizer:self.gestureRecognizer];
 }
 
 - (void)configureViewsForStyle:(TOScrollBarStyle)style
@@ -182,7 +189,7 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     // Restore the scroll view's state
     scrollView.showsVerticalScrollIndicator = _scrollView.showsVerticalScrollIndicator;
 
-    //remove the observers
+    // Remove the observers
     [scrollView removeObserver:self forKeyPath:@"contentOffset"];
     [scrollView removeObserver:self forKeyPath:@"contentSize"];
 }
@@ -251,16 +258,19 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     CGFloat horizontalOffset = halfWidth - _edgeInset;
     self.horizontalOffset = (horizontalOffset > 0.0f) ? horizontalOffset : 0.0f;
 
+    // Work out the frame for the scroll view
     CGRect frame = CGRectZero;
+    
+    // Size
     frame.size.width = kTOScrollBarWidth;
     frame.size.height = (_dragging ? _originalHeight : height);
+    
+    // Horizontal placement
     frame.origin.x = scrollViewFrame.size.width - (_edgeInset + halfWidth);
-    if (@available(iOS 11.0, *)) {
-        frame.origin.x -= _scrollView.safeAreaInsets.right;
-    }
-
+    if (@available(iOS 11.0, *)) { frame.origin.x -= _scrollView.safeAreaInsets.right; }
     frame.origin.x = MIN(frame.origin.x, scrollViewFrame.size.width - kTOScrollBarWidth);
 
+    // Vertical placement in scroll view
     if (_dragging) {
         frame.origin.y = _originalYOffset;
     }
@@ -269,10 +279,13 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
         frame.origin.y += insets.top;
         frame.origin.y += largeTitleDelta;
     }
-
     frame.origin.y += contentOffset.y;
 
+    // Set the frame
     self.frame = frame;
+    
+    // Bring the scroll bar to the front in case other subviews were subsequently added over it
+    [self.superview bringSubviewToFront:self];
 }
 
 - (void)layoutSubviews
@@ -356,9 +369,14 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     contentOffset.y = scrollOffset;
 
     // Animate to help coax the large title navigation bar to behave
-    [UIView animateWithDuration:animated ? 0.1f : 0.00001f animations:^{
+    if (@available(iOS 11.0, *)) {
+        [UIView animateWithDuration:animated ? 0.1f : 0.00001f animations:^{
+            [self.scrollView setContentOffset:contentOffset animated:NO];
+        }];
+    }
+    else {
         [self.scrollView setContentOffset:contentOffset animated:NO];
-    }];
+    }
 }
 
 #pragma mark - Scroll View Integration -
@@ -410,7 +428,27 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
 }
 
 #pragma mark - User Interaction -
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)scrollBarGestureRecognized:(TOScrollBarGestureRecognizer *)recognizer
+{
+    CGPoint touchPoint = [recognizer locationInView:self];
+    
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+            [self gestureBeganAtPoint:touchPoint];
+            break;
+        case UIGestureRecognizerStateChanged:
+            [self gestureMovedToPoint:touchPoint];
+            break;
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+            [self gestureEnded];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)gestureBeganAtPoint:(CGPoint)touchPoint
 {
     if (self.disabled) {
         return;
@@ -432,9 +470,6 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
         self.originalTopInset = _scrollView.contentInset.top;
     }
 
-    // Derive the touch from the scroll view as this view is moving up and down the scroll view
-    CGPoint touchPoint = [touches.anyObject locationInView:self];
-
     // Check if the user tapped inside the handle
     CGRect handleFrame = self.handleView.frame;
     if (touchPoint.y > (handleFrame.origin.y - 20) &&
@@ -444,41 +479,50 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
         return;
     }
 
-    // User tapped somewhere else, animate the handle to that point
-    CGFloat halfHeight = (handleFrame.size.height * 0.5f);
+	if (!self.handleExclusiveInteractionEnabled) {
+		// User tapped somewhere else, animate the handle to that point
+		CGFloat halfHeight = (handleFrame.size.height * 0.5f);
 
-    CGFloat destinationYOffset = touchPoint.y - halfHeight;
-    destinationYOffset = MAX(0.0f, destinationYOffset);
-    destinationYOffset = MIN(self.frame.size.height - halfHeight, destinationYOffset);
+		CGFloat destinationYOffset = touchPoint.y - halfHeight;
+		destinationYOffset = MAX(0.0f, destinationYOffset);
+		destinationYOffset = MIN(self.frame.size.height - halfHeight, destinationYOffset);
 
-    self.yOffset = (touchPoint.y - destinationYOffset);
-    handleFrame.origin.y = destinationYOffset;
+		self.yOffset = (touchPoint.y - destinationYOffset);
+		handleFrame.origin.y = destinationYOffset;
 
-    [UIView animateWithDuration:0.2f
-                          delay:0.0f
-         usingSpringWithDamping:1.0f
-          initialSpringVelocity:0.1f options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-                         self.handleView.frame = handleFrame;
-                     } completion:nil];
+		[UIView animateWithDuration:0.2f
+							  delay:0.0f
+			 usingSpringWithDamping:1.0f
+			  initialSpringVelocity:0.1f options:UIViewAnimationOptionBeginFromCurrentState
+						 animations:^{
+							 self.handleView.frame = handleFrame;
+						 } completion:nil];
 
-    [self setScrollYOffsetForHandleYOffset:floorf(destinationYOffset) animated:NO];
+		[self setScrollYOffsetForHandleYOffset:floorf(destinationYOffset) animated:NO];
+	}
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)gestureMovedToPoint:(CGPoint)touchPoint
 {
     if (self.disabled) {
         return;
     }
 
-    // Get the point that moved
-    CGPoint touchPoint = [touches.anyObject locationInView:self];
     CGFloat delta = 0.0f;
     CGRect handleFrame = _handleView.frame;
     CGRect trackFrame = _trackView.frame;
     CGFloat minimumY = 0.0f;
     CGFloat maximumY = trackFrame.size.height - handleFrame.size.height;
 
+	if (self.handleExclusiveInteractionEnabled) {
+		if (touchPoint.y < (handleFrame.origin.y - 20) ||
+			touchPoint.y > handleFrame.origin.y + (handleFrame.size.height + 20))
+		{
+			// This touch is not on the handle; eject.
+			return;
+		}
+	}
+	
     // Apply the updated Y value plus the previous offset
     delta = handleFrame.origin.y;
     handleFrame.origin.y = touchPoint.y - _yOffset;
@@ -513,7 +557,7 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     [self setScrollYOffsetForHandleYOffset:floorf(handleFrame.origin.y) animated:NO]; //(delta < 0.51f)
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)gestureEnded
 {
     self.scrollView.scrollEnabled = YES;
     self.dragging = NO;
@@ -524,18 +568,19 @@ typedef struct TOScrollBarScrollViewState TOScrollBarScrollViewState;
     } completion:nil];
 }
 
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-    self.scrollView.scrollEnabled = YES;
-    self.dragging = NO;
-
-    [UIView animateWithDuration:0.5f delay:0.0f usingSpringWithDamping:1.0f initialSpringVelocity:0.5f options:0 animations:^{
-        [self layoutInScrollView];
-        [self layoutIfNeeded];
-    } completion:nil];
+    if (!self.handleExclusiveInteractionEnabled) {
+		return [super pointInside:point withEvent:event];
+	}
+    else {
+		CGFloat handleMinY = CGRectGetMinY(self.handleView.frame);
+		CGFloat handleMaxY = CGRectGetMaxY(self.handleView.frame);
+		return (0 <= point.x) && (handleMinY <= point.y) && (point.y <= handleMaxY);
+	}
 }
 
-- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *result = [super hitTest:point withEvent:event];
 

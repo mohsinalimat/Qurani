@@ -56,7 +56,7 @@ class SQAyahPickerViewController: SQPickerViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100
 
         
@@ -126,7 +126,7 @@ extension SQAyahPickerViewController: UITableViewDataSource, UITableViewDelegate
         paragraphStyle.lineHeightMultiple = 1.0
         paragraphStyle.alignment = .right
         
-        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: labelColor!, NSFontAttributeName: font])
+        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: labelColor!, NSAttributedString.Key.font: font])
         
         cell.label.attributedText = attributedText
         cell.cornerLabel.text = "\(ayaRep.index!.localized)"

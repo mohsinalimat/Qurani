@@ -11,6 +11,7 @@
 #endif
 
 #import "TOScrollBar.h"
+#import "TOScrollBarGestureRecognizer.h"
 #import "UIScrollView+TOScrollBar.h"
 
 FOUNDATION_EXPORT double TOScrollBarVersionNumber;
