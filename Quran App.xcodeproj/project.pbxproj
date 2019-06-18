@@ -998,7 +998,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quran App/Quran App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+<<<<<<< HEAD
 				SWIFT_VERSION = 5.0;
+=======
+				SWIFT_VERSION = 4.2;
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1021,7 +1025,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.sketch.qurani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quran App/Quran App-Bridging-Header.h";
+<<<<<<< HEAD
 				SWIFT_VERSION = 5.0;
+=======
+				SWIFT_VERSION = 4.2;
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

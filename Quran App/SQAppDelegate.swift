@@ -21,7 +21,11 @@ class SQAppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+<<<<<<< HEAD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+=======
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
         // Override point for customization after application launch.
         
         ValueTransformer.setValueTransformer(SQArrayTransformer(), forName: NSValueTransformerName(rawValue: "SQArrayTransformer"))

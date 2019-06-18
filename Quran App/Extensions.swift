@@ -148,7 +148,7 @@ public extension NSObject {
     }
 }
 
-public extension UIViewController {
+extension UIViewController {
     
     func showMessage(_ message: String, color: UIColor = UIColor.globalTint, action: (() -> Void)? = nil){
         let murmur = Murmur(title: message, backgroundColor: color, titleColor: UIColor.white, action: action)

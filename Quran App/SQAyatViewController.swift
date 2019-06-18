@@ -172,7 +172,11 @@ extension SQAyatViewController: UITableViewDataSource, UITableViewDelegate {
 //
 //        let attributedText = NSAttributedString(string: ayaRep.text + " \(indexPath.row.localized)", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: labelColor, NSAttributedString.Key.font: font])
         
+<<<<<<< HEAD
         cell.set(text: ayaRep.text + " \(indexPath.row.localized)", color: labelColor)
+=======
+        let attributedText = NSAttributedString(string: ayaRep.text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: labelColor, NSAttributedString.Key.font: font])
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
         
 //        cell.label.attributedText = attributedText
         cell.cornerLabel.text = "\(ayaRep.index!.localized)"

@@ -96,7 +96,11 @@ open class WhistleFactory: UIViewController {
   }
 
   func moveWindowToFront() {
+<<<<<<< HEAD
     whistleWindow.windowLevel = view.isiPhoneX ? UIWindow.Level.normal : UIWindow.Level.statusBar
+=======
+    whistleWindow.windowLevel = view.isiPhoneX ? UIWindowLevelNormal : UIWindowLevelStatusBar
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
     setNeedsStatusBarAppearanceUpdate()
   }
 
@@ -117,7 +121,11 @@ open class WhistleFactory: UIViewController {
         NSString(string: text).boundingRect(
           with: CGSize(width: labelWidth, height: CGFloat.infinity),
           options: NSStringDrawingOptions.usesLineFragmentOrigin,
+<<<<<<< HEAD
           attributes: [NSAttributedString.Key.font: titleLabel.font],
+=======
+          attributes: [NSAttributedStringKey.font: titleLabel.font],
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
           context: nil
         )
       titleLabelHeight = CGFloat(neededDimensions.size.height)
@@ -172,7 +180,11 @@ open class WhistleFactory: UIViewController {
       }, completion: { _ in
         if let window = self.previousKeyWindow {
           window.isHidden = false
+<<<<<<< HEAD
           self.whistleWindow.windowLevel = UIWindow.Level.normal - 1
+=======
+          self.whistleWindow.windowLevel = UIWindowLevelNormal - 1
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
           self.previousKeyWindow = nil
           window.rootViewController?.setNeedsStatusBarAppearanceUpdate()
         }

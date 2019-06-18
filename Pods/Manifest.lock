@@ -4,7 +4,11 @@ PODS:
   - Bohr (3.0.0)
   - CFAlertViewController (3.1)
   - DOFavoriteButton (0.0.4)
+<<<<<<< HEAD
   - DynamicButton (6.1.0)
+=======
+  - DynamicButton (6.2.0)
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
   - DynamicColor (3.2.1)
   - DZNEmptyDataSet (1.8.1)
   - GDLoadingIndicator (1.0.0)
@@ -59,7 +63,11 @@ SPEC CHECKSUMS:
   Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
   CFAlertViewController: a27cf0512d0fa9ef6a3b966862039c295fb0ef69
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+<<<<<<< HEAD
   DynamicButton: 5a3ae2bf26dc196fb6c85b3e1aac956add860718
+=======
+  DynamicButton: 99858ce823ceed7263a4eed43bd3870e72723cb2
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
   DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   GDLoadingIndicator: 78753d554a92203d648f567c7660e3b637ca083f
@@ -73,4 +81,8 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b8574721b347d31ebd6ab6a6cec5013a9744d077
 
+<<<<<<< HEAD
 COCOAPODS: 1.6.1
+=======
+COCOAPODS: 1.7.1
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1

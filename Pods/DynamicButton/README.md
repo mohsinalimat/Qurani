@@ -16,8 +16,8 @@
 ## Requirements
 
 - iOS 8.0+ / tvOS 9.0+
-- Xcode 9.0+
-- Swift 4+
+- Xcode 10.0+
+- Swift 5+
 
 ## Usage
 
@@ -137,7 +137,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
+<<<<<<< HEAD
 pod 'DynamicButton', '~> 6.1.0'
+=======
+pod 'DynamicButton', '~> 6.2.0'
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
 ```
 
 Install into your project:
@@ -168,7 +172,11 @@ $ brew install carthage
 To integrate `DynamicButton` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
+<<<<<<< HEAD
 github "yannickl/DynamicButton" >= 6.1.0
+=======
+github "yannickl/DynamicButton" >= 6.2.0
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
 ```
 
 #### Swift Package Manager
@@ -182,7 +190,11 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
+<<<<<<< HEAD
         .Package(url: "https://github.com/yannickl/DynamicButton.git", versions: "6.1.0" ..< Version.max)
+=======
+        .Package(url: "https://github.com/yannickl/DynamicButton.git", versions: "6.2.0" ..< Version.max)
+>>>>>>> 049312e98cf36689ad0b0d11a4aabb0b7b8afec1
     ]
 )
 ```
